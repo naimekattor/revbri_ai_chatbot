@@ -72,6 +72,7 @@ export function RevenueGrowthChart() {
           axisLine={false}
           tickLine={false}
           tick={{ fontSize: 9, fill: "#7a8493" }}
+          
           domain={[0, 100000]}
           ticks={[0, 25000, 50000, 75000, 100000]}
           width={50}
