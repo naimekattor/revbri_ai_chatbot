@@ -7,7 +7,7 @@ import heroRight from "@/assets/main/heroRight.png";
 
 export default function HomeHero() {
   return (
-    <section className="relative w-full min-h-150 md:min-h-175 flex items-center justify-center overflow-hidden  px-6 md:px-12 lg:px-24 border border-amber-300">
+    <section className="relative w-full min-h-150 md:min-h-175 flex items-center justify-center overflow-hidden  px-6 md:px-12 lg:px-24 ">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -26,7 +26,7 @@ export default function HomeHero() {
       </div>
 
       {/* Main Container */}
-      <div className="relative min-h-150 md:min-h-175 z-20 mx-auto w-full max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-end border border-green-400">
+      <div className="relative min-h-150 md:min-h-175 z-20 mx-auto w-full max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-end ">
         {/* Left Content Column with Liquid Glass Background */}
         <div className="lg:col-span-7 flex flex-col items-start self-center py-12 lg:py-16">
           <div className="bg-black/30 backdrop-blur-md border border-white/10 rounded-4xl p-6 sm:p-10 md:p-12 shadow-2xl w-full flex flex-col gap-6 animate-in fade-in slide-in-from-left-6 duration-700">
@@ -60,7 +60,7 @@ export default function HomeHero() {
         </div>
 
         {/* Right Image Column - Aligned to bottom edge */}
-        <div className="relative lg:col-span-5 h-full flex  z-20 border border-blue-400">
+        <div className="relative lg:col-span-5 h-full min-h flex  z-20 ">
           <Image
             src={heroRight}
             alt="Man using AI assistant avatar"
