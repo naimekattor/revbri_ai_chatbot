@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import MessageBox from "@/components/dashboard/MessageInput";
 import MessageDisplay from "@/components/dashboard/MessageDisplay";
 
@@ -32,7 +32,10 @@ export default function page() {
   };
   return (
     <div className="w-full h-full bg-[#EFF2F6] relative overflow-y-auto pb-20">
-      <MessageDisplay setMessages={setMessages} messages={messages} />
+      {/* useSearchParams() inside MessageDisplay requires Suspense boundary */}
+      <Suspense fallback={<div className="flex-1 h-full" />}>
+        <MessageDisplay setMessages={setMessages} messages={messages} />
+      </Suspense>
       {/* chat box part  */}
       <MessageBox
         message={message}
@@ -44,3 +47,4 @@ export default function page() {
     </div>
   );
 }
+
