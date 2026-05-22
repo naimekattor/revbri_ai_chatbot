@@ -1,9 +1,10 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { Globe, ChevronRight, Lock, User } from "lucide-react";
+import { Globe, ChevronRight, Lock, User, Settings } from "lucide-react";
 import Image from "next/image";
 import logo from "@/assets/main/logo.png";
 import { IoDiamondOutline } from "react-icons/io5";
+import { useRouter } from "next/navigation";
 
 interface HeaderProps {
   onMenuClick?: () => void;
@@ -15,6 +16,7 @@ export const Header: React.FC<HeaderProps> = ({
   userName = "Cameron",
   userAvatar = "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=100",
 }) => {
+  const navigate = useRouter();
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -98,6 +100,13 @@ export const Header: React.FC<HeaderProps> = ({
               <button className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-sm font-medium text-text-2nd hover:cursor-pointer">
                 <Lock size={18} />
                 Change Password
+              </button>
+              <button
+                onClick={() => navigate.push("/dashboard/settings")}
+                className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-sm font-medium text-text-2nd hover:cursor-pointer"
+              >
+                <Settings size={18} />
+                Settings
               </button>
             </div>
           )}
